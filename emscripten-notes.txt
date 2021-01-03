@@ -1,0 +1,15 @@
+#Emscripten guide
+## Install
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+git pull
+./emsdk install latest
+./emsdk activate latest
+source ./emsdk_env.sh
+cd upstream/emscripten
+
+# Compile
+Replace "g++" and "gcc" in makefile with "~/emsdk/upstream/emscripten/emcc"
+Run "rm -rf *.o"
+Run "~/emsdk/upstream/emscripten/emmake make -j 8"
+Run "~/emsdk/upstream/emscripten/emcc huwinterpreter.o -o output.html"
