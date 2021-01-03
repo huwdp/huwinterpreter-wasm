@@ -1,0 +1,5 @@
+[Runtime]
+name=org.flatpak.Hello.Debug
+
+[ExtensionOf]
+ref=app/org.flatpak.Hello/x86_64/master

@@ -1,0 +1,24 @@
+{
+  "id" : "org.flatpak.Hello",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "19.08",
+  "runtime-commit" : "b05888992f5d9e089bc3eb115d0b2998b394c84af1a001044844aac1b180a929",
+  "sdk" : "org.freedesktop.Sdk",
+  "sdk-commit" : "ee4ecf9fbcf2de32d2c500e3c65e4460ada89ab91217e76a122c431cec63e54c",
+  "command" : "HuwInterpreter",
+  "modules" : [
+    {
+      "name" : "hello",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "HuwInterpreter",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -D HuwInterpreter /app/bin/HuwInterpreter"
+      ]
+    }
+  ]
+}

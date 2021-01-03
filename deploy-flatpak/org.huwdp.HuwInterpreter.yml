@@ -1,0 +1,13 @@
+app-id: org.flatpak.Hello
+runtime: org.freedesktop.Platform
+runtime-version: '19.08'
+sdk: org.freedesktop.Sdk
+command: HuwInterpreter
+modules:
+  - name: hello
+    buildsystem: simple
+    build-commands:
+      - install -D HuwInterpreter /app/bin/HuwInterpreter
+    sources:
+      - type: file
+        path: HuwInterpreter

@@ -1,0 +1,13 @@
+[Application]
+name=org.flatpak.Hello
+runtime=org.freedesktop.Platform/x86_64/19.08
+sdk=org.freedesktop.Sdk/x86_64/19.08
+command=HuwInterpreter
+
+[Extension org.flatpak.Hello.Debug]
+directory=lib/debug
+autodelete=true
+no-autodownload=true
+
+[Build]
+built-extensions=org.flatpak.Hello.Debug;
