@@ -16,7 +16,7 @@ CC            = ~/emsdk/upstream/emscripten/emcc
 CXX           = ~/emsdk/upstream/emscripten/emcc
 DEFINES       = 
 CFLAGS        = -pipe -O2 -w -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -O2 -lstdc++ -fno-rtti -fmerge-all-constants -flto -O2 -std=gnu++1y -w -Wunused-function -Wunused-variable -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -O2 -fno-rtti -fmerge-all-constants -flto -O2 -std=gnu++1y -w -Wunused-function -Wunused-variable -fPIC $(DEFINES)
 INCPATH       = -I../source -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = HuwInterpreter1.0.0
-DISTDIR = /home/huw/projects/huwinterpreter/build-HuwInterpreter-Desktop-Release/.tmp/HuwInterpreter1.0.0
+DISTDIR = /home/huw/projects/huwinterpreter-wasm/build-HuwInterpreter-Desktop-WebAsm/.tmp/HuwInterpreter1.0.0
 LINK          = ~/emsdk/upstream/emscripten/emcc
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS)    
@@ -424,7 +424,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../source/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -867,7 +866,6 @@ Makefile: ../source/HuwInterpreter.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -940,7 +938,6 @@ Makefile: ../source/HuwInterpreter.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -1279,10 +1276,6 @@ importnode.o: ../source/nodes/importnode.cpp ../source/nodes/importnode.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -1595,10 +1588,6 @@ huwinterpreter.o: ../source/huwinterpreter.cpp ../source/huwinterpreter.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -2644,10 +2633,6 @@ functions.o: ../source/functions/functions.cpp ../source/functions/functions.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -3828,10 +3813,6 @@ parser.o: ../source/parser/parser.cpp ../source/parser/parser.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -4020,10 +4001,6 @@ main.o: ../source/main.cpp ../source/parser/parser.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -4311,10 +4288,6 @@ getfuncnode.o: ../source/nodes/getfuncnode.cpp ../source/nodes/getfuncnode.h \
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -4652,10 +4625,6 @@ huwcodenodefactory.o: ../source/nodes/huwcodenodefactory.cpp ../source/nodes/huw
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
@@ -5362,10 +5331,6 @@ nodefactoryfactory.o: ../source/nodes/nodefactoryfactory.cpp ../source/nodes/nod
 		../source/functions/unreffunction.h \
 		../source/functions/clockfunction.h \
 		../source/functions/timeformatfunction.h \
-		../source/functions/httpgetfunction.h \
-		../source/functions/httppostfunction.h \
-		../source/functions/httpputfunction.h \
-		../source/functions/httpheadfunction.h \
 		../source/functions/sleepfunction.h \
 		../source/functions/jsonencodefunction.h \
 		../source/functions/jsondecodefunction.h \
